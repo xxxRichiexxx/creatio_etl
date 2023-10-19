@@ -49,7 +49,7 @@ def transform(data, column_names=None, execution_date=None):
     return data
 
 
-def load(data, dwh_engine, data_type, start_date):
+def load(data, dwh_engine, data_type):
     """Загрузка данных в хранилище."""
 
     print('ЗАГРУЗКА ДАННЫХ')
