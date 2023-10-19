@@ -78,7 +78,7 @@ def load(data, dwh_engine, data_type, start_date, end_date):
         initial_rows_count = len(data)
 
         result_rows_count = pd.read_sql_query(
-            """
+            f"""
             SELECT COUNT(*)
             FROM sttgaz.stage_creatio_NavNpsCalcutaion
             WHERE ModifiedOn >= '{start_date}'
