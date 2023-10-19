@@ -1,0 +1,20 @@
+CREATE TABLE sttgaz.stage_creatio_NavNpsCalcutaion (
+	Id INT,
+	CreatedOn TIMESTAMP,
+	CreatedById INT,
+	ModifiedOn TIMESTAMP,
+	ModifiedById INT,
+	ProcessListeners INT,
+	NavFinalBonusId INT,
+	NavCriterionFive decimal(18,2),
+	NavCriterionFour decimal(18,2),
+	NavCriterionThree INT,
+	NavCriterionTwo decimal(18,2),
+	NavCriterionOne decimal(18,2),
+	NavCalculationTypeId INT,
+	NavAccountId INT,
+	NavRegionId INT,
+	NavPollId INT,
+	NavConversationScriptTypeId INT,
+	NavCriterionSix INT
+);
