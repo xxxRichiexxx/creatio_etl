@@ -1,3 +1,4 @@
 SELECT *
 FROM dbo.NavNpsCalcutaion
-WHERE DATEPART(month, ModifiedOn) = '{0}';
+WHERE ModifiedOn >= '{0}'
+    AND ModifiedOn <= '{1}';
