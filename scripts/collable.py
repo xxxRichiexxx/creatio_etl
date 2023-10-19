@@ -83,9 +83,9 @@ def etl(
     source_engine,
     dwh_engine,
     data_type,
+    sql_script_path,
     column_names=None,
     column_to_check=None,
-    sql_script_path,
     **context,
 ):
     """Запускаем ETL-процесс для заданного типа данных."""
