@@ -49,7 +49,7 @@ def transform(data, column_names=None, execution_date=None):
     return data
 
 
-def load(data, dwh_engine, data_type):
+def load(data, dwh_engine, data_type, start_date, end_date):
     """Загрузка данных в хранилище."""
 
     print('ЗАГРУЗКА ДАННЫХ')
@@ -74,6 +74,23 @@ def load(data, dwh_engine, data_type):
             if_exists='append',
             index=False,
         )
+
+        initial_rows_count = len(data)
+
+        result_rows_count = pd.read_sql_query(
+            """
+            SELECT COUNT(*)
+            FROM sttgaz.stage_creatio_NavNpsCalcutaion
+            WHERE ModifiedOn >= '{start_date}'
+                AND ModifiedOn <= '{end_date}';
+                        """,
+            dwh_engine,
+        ).values[0][0]
+
+        if initial_rows_count != result_rows_count:
+            raise Exception('Количество строк в источнике и хранилище не совпадают:', initial_rows_count, result_rows_count)
+        
+        print('Получено', initial_rows_count , 'Загружено', result_rows_count)
     else:
         print('Нет новых данных для загрузки.')
 
@@ -102,7 +119,7 @@ def etl(
     )
     data = transform(data, column_names)
 
-    load(data, dwh_engine, data_type)
+    load(data, dwh_engine, data_type, start_date, end_date)
 
     if column_to_check:
 
