@@ -1,3 +1,3 @@
 SELECT *
 FROM dbo.NavNpsCalcutaion
-WHERE DATE_TRUNC('MONTH', ModifiedOn) = '{0}';
+WHERE DATETRUNC(month, ModifiedOn) = '{0}';
