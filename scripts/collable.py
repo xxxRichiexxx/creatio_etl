@@ -9,8 +9,7 @@ def extract(
         source_engine,
         data_type,
         start_date=None,
-        end_date=None,
-        sql_script_path,
+        end_date=None
 ):
     """Извлечение данных из источника."""
 
@@ -83,7 +82,6 @@ def etl(
     source_engine,
     dwh_engine,
     data_type,
-    sql_script_path,
     column_names=None,
     column_to_check=None,
     **context,
@@ -101,7 +99,6 @@ def etl(
         data_type,
         start_date,
         end_date,
-        sql_script_path,
     )
     data = transform(data, column_names)
 
