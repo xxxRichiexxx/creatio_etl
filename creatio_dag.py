@@ -64,6 +64,7 @@ with DAG(
                         'data_type': data_type,
                         'source_engine': source_engine,
                         'dwh_engine': dwh_engine,
+                        'sql_script_path': '/home/da/airflow/dags/creatio_etl/scripts/',
                     },
                 )
             )

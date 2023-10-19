@@ -10,14 +10,15 @@ def extract(
         data_type,
         start_date=None,
         end_date=None,
+        sql_script_path,
 ):
     """Извлечение данных из источника."""
 
     print('Извлекаем данные из БД')
 
-    path = os.path.abspath(fr'{data_type}.sql')
+    path = os.path.join(sql_script_path, f'{data_type}.sql'),
 
-    with open(path, 'r') as f:
+    with open(path, 'r', encoding="utf-8") as f:
         command = f.read().format(start_date, end_date)
 
     print(command)
@@ -84,7 +85,8 @@ def etl(
     data_type,
     column_names=None,
     column_to_check=None,
-    **context
+    sql_script_path,
+    **context,
 ):
     """Запускаем ETL-процесс для заданного типа данных."""
 
@@ -99,6 +101,7 @@ def etl(
         data_type,
         start_date,
         end_date,
+        sql_script_path,
     )
     data = transform(data, column_names)
 
