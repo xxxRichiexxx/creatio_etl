@@ -16,7 +16,7 @@ def extract(
 
     print('Извлекаем данные из БД')
 
-    path = os.path.join(sql_script_path, f'{data_type}.sql')
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), f'{data_type}.sql')
 
     with open(path, 'r', encoding="utf-8") as f:
         command = f.read().format(start_date, end_date)
