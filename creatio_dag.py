@@ -69,29 +69,9 @@ with DAG(
                 )
             )
 
- 
-
     with TaskGroup('Загрузка_данных_в_dds_слой') as data_to_dds:
 
-        data_types = [
-            'dealer',
-            'buyer',
-        ]
-
-        tasks = []
-
-        for data_type in data_types:
-            tasks.append(
-                VerticaOperator(
-                    task_id=f'dds_isc_{data_type}',
-                    vertica_conn_id='vertica',
-                    sql=f'scripts/dds_{data_type}.sql',
-                    params={
-                        'delta_1': dt.timedelta(days=1),
-                        'delta_2': dt.timedelta(days=4),
-                    }
-                )
-            )
+        pass
 
     with TaskGroup('Загрузка_данных_в_dm_слой') as data_to_dm:
 
