@@ -205,3 +205,15 @@ CREATE TABLE sttgaz.stage_creatio_NavPollStatus (
 	Description varchar(250) NOT NULL,
 	ProcessListeners int NOT NULL
 );
+
+DROP TABLE IF EXISTS sttgaz.stage_creatio_NavQuotaType;
+CREATE TABLE sttgaz.stage_creatio_NavQuotaType (
+	Id VARCHAR NOT NULL,
+	CreatedOn TIMESTAMP NULL,
+	CreatedById VARCHAR NULL,
+	ModifiedOn TIMESTAMP NULL,
+	ModifiedById VARCHAR NULL,
+	Name varchar(250) NOT NULL,
+	Description varchar(250) NOT NULL,
+	ProcessListeners int NOT NULL
+);

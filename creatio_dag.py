@@ -56,6 +56,7 @@ with DAG(
             'stage_creatio_TsiPollType',
             'stage_creatio_ConversationScript',
             'stage_creatio_NavPollStatus',
+            'stage_creatio_NavQuotaType',
         ]
 
     start = DummyOperator(task_id='Начало')
