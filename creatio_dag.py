@@ -51,6 +51,8 @@ with DAG(
             'stage_creatio_NavNpsCalculationType',
             'stage_creatio_Account',
             'stage_creatio_NavGeoRegion',
+            'stage_creatio_NavYesNo',
+            'stage_creatio_NavConversationScriptType',
         ]
 
     start = DummyOperator(task_id='Начало')

@@ -81,7 +81,7 @@ CREATE TABLE sttgaz.stage_creatio_Account (
 	CreatedById VARCHAR NULL,
 	ModifiedOn TIMESTAMP NULL,
 	ModifiedById VARCHAR NULL,
-	Name VARCHAR NOT NULL,
+	Name VARCHAR(500) NOT NULL,
 	Description VARCHAR NOT NULL,
 	OwnershipId VARCHAR NULL,
 	PrimaryContactId VARCHAR NULL,
@@ -93,9 +93,9 @@ CREATE TABLE sttgaz.stage_creatio_Account (
 	Phone VARCHAR NOT NULL,
 	AdditionalPhone VARCHAR NOT NULL,
 	Fax VARCHAR NOT NULL,
-	Web VARCHAR NOT NULL,
+	Web VARCHAR(250) NOT NULL,
 	AddressTypeId VARCHAR NULL,
-	Address VARCHAR NOT NULL,
+	Address VARCHAR(500) NOT NULL,
 	CityId VARCHAR NULL,
 	RegionId VARCHAR NULL,
 	Zip VARCHAR NOT NULL,
@@ -105,7 +105,7 @@ CREATE TABLE sttgaz.stage_creatio_Account (
 	AnnualRevenueId VARCHAR NULL,
 	Notes VARCHAR NOT NULL,
 	Logo VARCHAR NULL,
-	AlternativeName VARCHAR NOT NULL,
+	AlternativeName VARCHAR(250) NOT NULL,
 	ProcessListeners int NOT NULL,
 	GPSN VARCHAR NOT NULL,
 	GPSE VARCHAR NOT NULL,
@@ -127,6 +127,7 @@ CREATE TABLE sttgaz.stage_creatio_Account (
 );
 
 
+
 DROP TABLE IF EXISTS sttgaz.stage_creatio_NavGeoRegion;
 CREATE TABLE sttgaz.stage_creatio_NavGeoRegion (
 	Id VARCHAR NOT NULL,
@@ -138,4 +139,28 @@ CREATE TABLE sttgaz.stage_creatio_NavGeoRegion (
 	Description varchar(250) NOT NULL,
 	ProcessListeners int NOT NULL,
 	NavCountryId VARCHAR NULL
+);
+
+DROP TABLE IF EXISTS sttgaz.stage_creatio_NavYesNo;
+CREATE TABLE sttgaz.stage_creatio_NavYesNo (
+	Id VARCHAR NOT NULL,
+	CreatedOn TIMESTAMP NULL,
+	CreatedById VARCHAR NULL,
+	ModifiedOn TIMESTAMP NULL,
+	ModifiedById VARCHAR NULL,
+	Name varchar(250) NOT NULL,
+	Description varchar(250) NOT NULL,
+	ProcessListeners int NOT NULL
+);
+
+DROP TABLE IF EXISTS sttgaz.stage_creatio_NavConversationScriptType;
+CREATE TABLE sttgaz.stage_creatio_NavConversationScriptType (
+	Id VARCHAR NOT NULL,
+	CreatedOn TIMESTAMP NULL,
+	CreatedById VARCHAR NULL,
+	ModifiedOn TIMESTAMP NULL,
+	ModifiedById VARCHAR NULL,
+	Name varchar(250) NOT NULL,
+	Description varchar(250) NOT NULL,
+	ProcessListeners int NOT NULL
 );
