@@ -53,6 +53,7 @@ with DAG(
             'stage_creatio_NavGeoRegion',
             'stage_creatio_NavYesNo',
             'stage_creatio_NavConversationScriptType',
+            'stage_creatio_TsiPollType',
         ]
 
     start = DummyOperator(task_id='Начало')
