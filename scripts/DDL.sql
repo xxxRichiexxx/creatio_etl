@@ -103,7 +103,7 @@ CREATE TABLE sttgaz.stage_creatio_Account (
 	AccountCategoryId VARCHAR NULL,
 	EmployeesNumberId VARCHAR NULL,
 	AnnualRevenueId VARCHAR NULL,
-	Notes VARCHAR NOT NULL,
+	Notes VARCHAR(500) NOT NULL,
 	Logo VARCHAR NULL,
 	AlternativeName VARCHAR(250) NOT NULL,
 	ProcessListeners int NOT NULL,
@@ -125,7 +125,6 @@ CREATE TABLE sttgaz.stage_creatio_Account (
 	NavReferenceRecordId VARCHAR NULL,
 	NavIsDuplicate BOOL NOT NULL
 );
-
 
 
 DROP TABLE IF EXISTS sttgaz.stage_creatio_NavGeoRegion;
@@ -174,7 +173,7 @@ CREATE TABLE sttgaz.stage_creatio_TsiPollType (
 	ModifiedOn TIMESTAMP NULL,
 	ModifiedById VARCHAR NULL,
 	ProcessListeners int NOT NULL,
-	Description varchar(250) NOT NULL
+	Description varchar(500) NOT NULL
 );
 
 DROP TABLE IF EXISTS sttgaz.stage_creatio_ConversationScript;
@@ -246,7 +245,7 @@ CREATE TABLE sttgaz.stage_creatio_Country (
 	ModifiedById VARCHAR NULL,
 	Name varchar(250) NOT NULL,
 	Description varchar(250) NOT NULL,
-	Image VARCHAR(500) NULL,
+	Image VARCHAR(1500) NULL,
 	BillingInfo VARCHAR(500) NOT NULL,
 	ProcessListeners int NOT NULL,
 	TimeZoneId VARCHAR NULL,
@@ -254,6 +253,7 @@ CREATE TABLE sttgaz.stage_creatio_Country (
 	Alpha2Code varchar(50) NOT NULL,
 	NavRegionCodeId VARCHAR NULL
 );
+
 
 
 DROP TABLE IF EXISTS sttgaz.stage_creatio_NavPollDirection;

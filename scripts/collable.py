@@ -82,7 +82,7 @@ def load(data, dwh_engine, data_type, start_date, end_date):
             SELECT COUNT(*)
             FROM sttgaz.{data_type}
             WHERE ModifiedOn >= '{start_date}'
-                AND ModifiedOn <= '{end_date}';
+                AND ModifiedOn < '{end_date}';
                         """,
             dwh_engine,
         ).values[0][0]
@@ -109,7 +109,7 @@ def etl(
 
     start_date = execution_date.replace(day=1)
     end_date = (execution_date.replace(day=28) + dt.timedelta(days=4)) \
-        .replace(day=1) - dt.timedelta(days=1)
+        .replace(day=1)
 
     data = extract(
         source_engine,
