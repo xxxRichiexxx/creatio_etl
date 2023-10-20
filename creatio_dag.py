@@ -48,6 +48,7 @@ with DAG(
     data_types = [
             'stage_creatio_NavNpsCalcutaion',
             'stage_creatio_TsiPoll',
+            'stage_creatio_NavNpsCalculationType',
         ]
 
     start = DummyOperator(task_id='Начало')

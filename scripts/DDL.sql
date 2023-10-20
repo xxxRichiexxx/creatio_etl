@@ -61,3 +61,14 @@ CREATE TABLE sttgaz.stage_creatio_TsiPoll (
 	NavPollDirectionId  VARCHAR
 );
 
+DROP TABLE IF EXISTS sttgaz.stage_creatio_NavNpsCalculationType;
+CREATE TABLE sttgaz.stage_creatio_NavNpsCalculationType (
+	Id VARCHAR,
+	CreatedOn TIMESTAMP,
+	CreatedById VARCHAR,
+	ModifiedOn TIMESTAMP,
+	ModifiedById VARCHAR,
+	Name VARCHAR,
+	Description VARCHAR,
+	ProcessListeners int
+);
