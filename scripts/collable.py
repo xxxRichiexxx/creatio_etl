@@ -75,6 +75,16 @@ def load(data, dwh_engine, data_type, start_date, end_date):
             index=False,
         )
 
+        command = f"""
+            DELETE FROM sttgaz.{data_type}
+            WHERE Id NOT IN ({ids})
+                AND ModifiedOn >= '{start_date}'
+                AND ModifiedOn < '{end_date}';
+        """
+        print(command)
+
+        dwh_engine.execute(command)
+
         initial_rows_count = len(data)
 
         result_rows_count = pd.read_sql_query(
