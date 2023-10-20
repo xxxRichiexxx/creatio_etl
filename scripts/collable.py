@@ -57,11 +57,11 @@ def load(data, dwh_engine, data_type, start_date, end_date):
 
         print(data)
 
-        ids = tuple(data['Id'])
+        ids = ','.join(tuple(data['Id']))
 
         command = f"""
             DELETE FROM sttgaz.{data_type}
-            WHERE Id IN {ids};
+            WHERE Id IN ({ids});
         """
         print(command)
 
