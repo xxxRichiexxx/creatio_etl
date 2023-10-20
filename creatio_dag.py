@@ -57,6 +57,7 @@ with DAG(
             'stage_creatio_ConversationScript',
             'stage_creatio_NavPollStatus',
             'stage_creatio_NavQuotaType',
+            'stage_creatio_Period',
         ]
 
     start = DummyOperator(task_id='Начало')

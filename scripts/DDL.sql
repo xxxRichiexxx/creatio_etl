@@ -217,3 +217,21 @@ CREATE TABLE sttgaz.stage_creatio_NavQuotaType (
 	Description varchar(250) NOT NULL,
 	ProcessListeners int NOT NULL
 );
+
+DROP TABLE IF EXISTS sttgaz.stage_creatio_Period;
+CREATE TABLE sttgaz.stage_creatio_Period (
+	Id VARCHAR NOT NULL,
+	CreatedOn TIMESTAMP NULL,
+	CreatedById VARCHAR NULL,
+	ModifiedOn TIMESTAMP NULL,
+	ModifiedById VARCHAR NULL,
+	Name varchar(250) NOT NULL,
+	Description varchar(250) NOT NULL,
+	ProcessListeners int NOT NULL,
+	StartDate date NULL,
+	DueDate date NULL,
+	PeriodTypeId VARCHAR NULL,
+	YearId VARCHAR NULL,
+	QuarterId VARCHAR NULL,
+	ParentId VARCHAR NULL
+);
