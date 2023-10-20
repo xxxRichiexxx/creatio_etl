@@ -58,6 +58,7 @@ with DAG(
             'stage_creatio_NavPollStatus',
             'stage_creatio_NavQuotaType',
             'stage_creatio_Period',
+            'stage_creatio_Country',
         ]
 
     start = DummyOperator(task_id='Начало')

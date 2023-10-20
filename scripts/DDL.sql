@@ -235,3 +235,22 @@ CREATE TABLE sttgaz.stage_creatio_Period (
 	QuarterId VARCHAR NULL,
 	ParentId VARCHAR NULL
 );
+
+
+DROP TABLE IF EXISTS sttgaz.stage_creatio_Country;
+CREATE TABLE sttgaz.stage_creatio_Country (
+	Id VARCHAR NOT NULL,
+	CreatedOn TIMESTAMP NULL,
+	CreatedById VARCHAR NULL,
+	ModifiedOn TIMESTAMP NULL,
+	ModifiedById VARCHAR NULL,
+	Name varchar(250) NOT NULL,
+	Description varchar(250) NOT NULL,
+	Image VARCHAR(500) NULL,
+	BillingInfo VARCHAR(500) NOT NULL,
+	ProcessListeners int NOT NULL,
+	TimeZoneId VARCHAR NULL,
+	Code varchar(50) NOT NULL,
+	Alpha2Code varchar(50) NOT NULL,
+	NavRegionCodeId VARCHAR NULL
+);
