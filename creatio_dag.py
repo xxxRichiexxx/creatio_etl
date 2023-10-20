@@ -50,6 +50,7 @@ with DAG(
             'stage_creatio_TsiPoll',
             'stage_creatio_NavNpsCalculationType',
             'stage_creatio_Account',
+            'stage_creatio_NavGeoRegion',
         ]
 
     start = DummyOperator(task_id='Начало')
