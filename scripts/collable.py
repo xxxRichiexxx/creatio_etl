@@ -57,7 +57,7 @@ def load(data, dwh_engine, data_type, start_date, end_date):
 
         print(data)
 
-        ids = ','.join(map(tuple(data['Id']), lambda item: "'" + str(item) + "'"))
+        ids = ','.join(tuple(data['Id'].apply(lambda item: "'" + str(item) + "'")))
 
         command = f"""
             DELETE FROM sttgaz.{data_type}
