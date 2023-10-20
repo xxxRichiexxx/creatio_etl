@@ -187,9 +187,21 @@ CREATE TABLE sttgaz.stage_creatio_ConversationScript (
 	ProcessListeners int NOT NULL,
 	Name varchar(250) NOT NULL,
 	Notes varchar(500) NOT NULL,
-	Description varchar(250) NOT NULL,
+	Description varchar(1000) NOT NULL,
 	Code varchar(50) NOT NULL,
 	EntityId VARCHAR NULL,
 	NavVersion int NOT NULL,
 	NavTypeId VARCHAR NULL
+);
+
+DROP TABLE IF EXISTS sttgaz.stage_creatio_NavPollStatus;
+CREATE TABLE sttgaz.stage_creatio_NavPollStatus (
+	Id VARCHAR NOT NULL,
+	CreatedOn TIMESTAMP NULL,
+	CreatedById VARCHAR NULL,
+	ModifiedOn TIMESTAMP NULL,
+	ModifiedById VARCHAR NULL,
+	Name varchar(250) NOT NULL,
+	Description varchar(250) NOT NULL,
+	ProcessListeners int NOT NULL
 );
