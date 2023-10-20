@@ -176,3 +176,20 @@ CREATE TABLE sttgaz.stage_creatio_TsiPollType (
 	ProcessListeners int NOT NULL,
 	Description varchar(250) NOT NULL
 );
+
+DROP TABLE IF EXISTS sttgaz.stage_creatio_ConversationScript;
+CREATE TABLE sttgaz.stage_creatio_ConversationScript (
+	Id VARCHAR NOT NULL,
+	CreatedOn TIMESTAMP NULL,
+	CreatedById VARCHAR NULL,
+	ModifiedOn TIMESTAMP NULL,
+	ModifiedById VARCHAR NULL,
+	ProcessListeners int NOT NULL,
+	Name varchar(250) NOT NULL,
+	Notes varchar(500) NOT NULL,
+	Description varchar(250) NOT NULL,
+	Code varchar(50) NOT NULL,
+	EntityId VARCHAR NULL,
+	NavVersion int NOT NULL,
+	NavTypeId VARCHAR NULL
+);
