@@ -60,6 +60,7 @@ with DAG(
             'stage_creatio_Period',
             'stage_creatio_Country',
             'stage_creatio_NavPollDirection',
+            'stage_creatio_AccountType',
         ]
 
     start = DummyOperator(task_id='Начало')
